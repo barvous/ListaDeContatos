@@ -38,7 +38,11 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginLeft="10dp"
         android:layout_marginTop="100dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginRight="10dp"
         android:orientation="vertical">
 
         <EditText
@@ -53,6 +57,7 @@
             android:id="@+id/edtSobrenome"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
             android:ems="10"
             android:hint="Sobrenome"
             android:inputType="textPersonName" />
@@ -61,25 +66,28 @@
             android:id="@+id/edtEmail"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
             android:ems="10"
             android:hint="E-mail"
-            android:inputType="textPersonName" />
+            android:inputType="textWebEmailAddress|textPersonName" />
 
         <EditText
             android:id="@+id/edtTelefone"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
             android:ems="10"
             android:hint="Telefone"
-            android:inputType="textPersonName" />
+            android:inputType="number" />
 
         <EditText
             android:id="@+id/edtCelular"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
             android:ems="10"
             android:hint="Celular"
-            android:inputType="textPersonName" />
+            android:inputType="number" />
     </LinearLayout>
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -94,7 +102,7 @@
             android:layout_marginLeft="30dp"
             android:layout_marginEnd="30dp"
             android:layout_marginRight="30dp"
-            android:layout_marginBottom="50dp"
+            android:layout_marginBottom="40dp"
             android:text="Salvar"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"

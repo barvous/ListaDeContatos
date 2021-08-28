@@ -6,6 +6,7 @@ import org.dizitart.no2.objects.Id;
 import org.dizitart.no2.objects.Index;
 import org.dizitart.no2.objects.Indices;
 
+import java.io.Serializable;
 import java.util.Objects;
 
 @Indices(value = {
@@ -13,16 +14,20 @@ import java.util.Objects;
         @Index(value = "nome", type = IndexType.Unique)
 })
 
-public class Contato {
+public class Contato implements Serializable {
     @Id
     public NitriteId id;
-    private String nome, sobrenome, email;
-    private int telefone, celular;
+    private String nome;
+    private String sobrenome;
+    private String email;
+    private String telefone;
+    private String celular;
+
 
     public Contato() {
     }
 
-    public Contato(String nome, String sobrenome, String email, int telefone, int celular) {
+    public Contato(String nome, String sobrenome, String email, String telefone, String celular) {
         this.nome = nome;
         this.sobrenome = sobrenome;
         this.email = email;
@@ -30,7 +35,7 @@ public class Contato {
         this.celular = celular;
     }
 
-    public Contato(String nome, int celular) {
+    public Contato(String nome, String celular) {
         this.nome = nome;
         this.celular = celular;
     }
@@ -59,20 +64,25 @@ public class Contato {
         this.email = email;
     }
 
-    public int getTelefone() {
+    public String getTelefone() {
         return telefone;
     }
 
-    public void setTelefone(int telefone) {
+    public void setTelefone(String telefone) {
         this.telefone = telefone;
     }
 
-    public int getCelular() {
+    public String getCelular() {
         return celular;
     }
 
-    public void setCelular(int celular) {
+    public void setCelular(String celular) {
         this.celular = celular;
+    }
+
+    @Override
+    public String toString() {
+        return nome + " " + sobrenome;
     }
 }
 

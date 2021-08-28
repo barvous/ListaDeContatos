@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.os.Bundle;
 
 import com.example.listadecontatos.modelo.Contato;
+import com.example.listadecontatos.persistencia.BaseDados;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -13,19 +14,14 @@ import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.EditText;
 import android.widget.ListView;
+import android.widget.Toast;
 
 import java.util.Arrays;
+import java.util.List;
 
 public class ListaActivity extends AppCompatActivity {
-
-//Modelo
-Contato contato = new Contato();
-
-//Componentes visuais
-EditText edtNome, edtSobrenome, edtEmail, edtTelefone, edtCelular;
-ListView lvContatos;
-
-
+    List<Contato> listContato;
+    ListView lv;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -33,18 +29,41 @@ ListView lvContatos;
         setContentView(R.layout.activity_lista);
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+        BaseDados.init(getFilesDir()+"Base.db");
+
 
         FloatingActionButton fab = findViewById(R.id.fabCadastro);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(ListaActivity.this, CadastroActivity.class);
+
                 startActivity(intent);
 
             }
         });
-        ListView lv = findViewById(R.id.listaContatos);
-        lv.setAdapter(new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, Arrays.asList("Ola Mundo!","Amanda aquela","Amanda a outra","Lorem Ipsum","ta bom já!!")));
+        listContato = BaseDados.rContato.find().toList();
+        lv = findViewById(R.id.listaContatos);
 
+        lv.setAdapter(new ArrayAdapter<Contato>(this, android.R.layout.simple_list_item_1, listContato));
+
+        lv.setOnItemClickListener((parent, view, position, id) -> {
+            Contato contato = listContato.get(position);
+            Intent intent = new Intent(ListaActivity.this, ContatoActivity.class);
+            intent.putExtra("contato",contato);
+            startActivity(intent);
+
+        });
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        atualizarLista();
+    }
+
+    public void atualizarLista(){
+        listContato = BaseDados.rContato.find().toList();
+        lv.setAdapter(new ArrayAdapter<Contato>(this, android.R.layout.simple_list_item_1, listContato));
     }
 }
