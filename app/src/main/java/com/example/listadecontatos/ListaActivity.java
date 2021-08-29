@@ -12,11 +12,8 @@ import androidx.appcompat.widget.Toolbar;
 
 import android.view.View;
 import android.widget.ArrayAdapter;
-import android.widget.EditText;
 import android.widget.ListView;
-import android.widget.Toast;
 
-import java.util.Arrays;
 import java.util.List;
 
 public class ListaActivity extends AppCompatActivity {
@@ -27,7 +24,7 @@ public class ListaActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setTitle("Lista de Contatos");
         setContentView(R.layout.activity_lista);
-        Toolbar toolbar = findViewById(R.id.toolbar);
+        Toolbar toolbar = findViewById(R.id.toolbarLista);
         setSupportActionBar(toolbar);
         BaseDados.init(getFilesDir()+"Base.db");
 

@@ -8,6 +8,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
+import android.widget.Toolbar;
 
 import com.example.listadecontatos.modelo.Contato;
 import com.fasterxml.jackson.databind.ser.Serializers;
@@ -16,12 +17,14 @@ import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.example.listadecontatos.persistencia.BaseDados;
 
 public class CadastroActivity extends AppCompatActivity {
-
         EditText edtNome,edtSobrenome,edtEmail,edtTelefone,edtCelular;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_cadastro);
+        getSupportActionBar().setTitle("Cadastro");
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
 
 
         Button btnSalvar = findViewById(R.id.btnSalvar);
@@ -39,13 +42,7 @@ public class CadastroActivity extends AppCompatActivity {
             }
         });
 
-        FloatingActionButton fab = findViewById(R.id.fabVoltar);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                finish();
-            }
-        });
+
     }
     public void salvar(){
         String nome = edtNome.getText().toString();

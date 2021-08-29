@@ -98,16 +98,29 @@
 
         <Button
             android:id="@+id/btnSalvarEdicao"
-            android:layout_width="0dp"
+            android:layout_width="170dp"
             android:layout_height="60dp"
             android:layout_marginStart="20dp"
             android:layout_marginLeft="20dp"
+            android:layout_marginTop="50dp"
+            android:text="Salvar"
+            android:onClick="salvarEdicao"
+            app:backgroundTint="@android:color/holo_green_dark"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            />
+
+        <Button
+            android:id="@+id/btnExcluir"
+            android:layout_width="170dp"
+            android:layout_height="60dp"
+            android:layout_marginTop="50dp"
             android:layout_marginEnd="20dp"
             android:layout_marginRight="20dp"
-            android:layout_marginBottom="40dp"
-            android:text="Button"
-            app:layout_constraintBottom_toBottomOf="parent"
+            android:text="Excluir"
+            android:onClick="deletarContato"
+            app:backgroundTint="@android:color/holo_red_light"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent" />
+            app:layout_constraintTop_toTopOf="parent" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </LinearLayout>
