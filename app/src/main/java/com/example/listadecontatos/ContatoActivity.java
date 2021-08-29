@@ -33,7 +33,7 @@ public class ContatoActivity extends AppCompatActivity {
     EditText telefone;
     EditText celular;
     TextView nomeCompleto;
-    static Contato c = new Contato();
+    static Contato c;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -49,6 +49,7 @@ public class ContatoActivity extends AppCompatActivity {
         nomeCompleto = findViewById(R.id.tvNomeContato);
 
         //Preenchendo objeto statico
+        c = new Contato();
         c.setNome(nome.getText().toString());
         c.setSobrenome(sobrenome.getText().toString());
         c.setEmail(email.getText().toString());
@@ -82,12 +83,14 @@ public class ContatoActivity extends AppCompatActivity {
     }
 
     public void salvarEdicao(View view) {
+
         //Capturando os novos valores do campo de texto
         EditText edtnome = (findViewById(R.id.edtNomeContato));
         EditText edtsobrenome = findViewById(R.id.edtSobrenomeContato);
         EditText edtemail = findViewById(R.id.edtEmailContato);
         EditText edttelefone = findViewById(R.id.edtTelefoneContato);
         EditText edtcelular = findViewById(R.id.edtCelularContato);
+
         //atribuindo os novos valores a Strings
         String nomeNovo = edtnome.getText().toString();
         String sobrenomeNovo = edtsobrenome.getText().toString();
@@ -105,9 +108,12 @@ public class ContatoActivity extends AppCompatActivity {
         //Verificando se o usuario mudou algum campo de texto
         if (nomeNovo.equals(nomeAntigo) && sobrenomeNovo.equals(sobrenomeAntigo) && emailNovo.equals(emailAntigo) &&
             telefoneNovo.equals(telefoneAntigo) && celularNovo.equals(celularAntigo)){
+
             Toast.makeText(getApplicationContext(), "Altere alguma informação para fazer uma mudança.",
                     Toast.LENGTH_LONG);
+
         }else{
+
             //criando e preenchendo um novo objeto com os novos valores
             Contato contato = new Contato();
             contato.setNome(nomeNovo);
