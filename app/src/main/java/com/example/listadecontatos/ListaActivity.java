@@ -21,9 +21,12 @@ import android.widget.ArrayAdapter;
 import android.widget.EditText;
 import android.widget.ListView;
 
+import org.dizitart.no2.FindOptions;
+import org.dizitart.no2.objects.ObjectFilter;
 import org.dizitart.no2.objects.filters.ObjectFilters;
 
 import java.util.List;
+import java.util.function.Predicate;
 
 public class ListaActivity extends AppCompatActivity {
     List<Contato> listContato;
@@ -99,15 +102,9 @@ public class ListaActivity extends AppCompatActivity {
     }
 
     public void pesquisarContato(){
-//        try {
             String procuraNome = edtPesquisar.getText().toString();
             String procuraSobrenome = procuraNome;
-            listContato = BaseDados.rContato.find(ObjectFilters.regex("nome", procuraNome)).toList();
-            BaseDados.rContato.find(ObjectFilters.regex("sorbenome", procuraSobrenome))
+            listContato= BaseDados.rContato.find(ObjectFilters.regex("nome", procuraNome)).toList();
             lv.setAdapter(new ArrayAdapter<Contato>(this, android.R.layout.simple_list_item_1, listContato));
-//        }catch (Exception e){
-//
-//        }
-
     }
 }
