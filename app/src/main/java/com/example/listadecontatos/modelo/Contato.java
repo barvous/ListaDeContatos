@@ -39,6 +39,14 @@ public class Contato implements Serializable {
         this.celular = celular;
     }
 
+    public NitriteId getId() {
+        return id;
+    }
+
+    public void setId(NitriteId id) {
+        this.id = id;
+    }
+
     public String getNome() {
         return nome;
     }

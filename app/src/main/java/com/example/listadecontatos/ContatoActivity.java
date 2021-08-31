@@ -15,6 +15,7 @@ import com.example.listadecontatos.modelo.Contato;
 import com.example.listadecontatos.modelo.ValidadorUtil;
 import com.example.listadecontatos.persistencia.BaseDados;
 
+import org.dizitart.no2.exceptions.UniqueConstraintException;
 import org.dizitart.no2.objects.filters.ObjectFilters;
 
 
@@ -91,8 +92,14 @@ public class ContatoActivity extends AppCompatActivity {
         contato.setTelefone(telefoneNovo);
         contato.setCelular(celularNovo);
 
+        ValidadorUtil validador = new ValidadorUtil();
 
-        if (new ValidadorUtil().contatoValido(contato)) {
+        if (validador.contatoValido(contato)) {
+            if (validador.contatoExistente(contato)){
+                Toast.makeText(getApplicationContext(), "Já existe um contato com esse número.", Toast.LENGTH_LONG)
+                        .show();
+                return;
+            }
             BaseDados.rContato.update(contato);
             finish();
         }

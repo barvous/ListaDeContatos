@@ -35,8 +35,10 @@
 
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/lNome"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
             android:layout_width="match_parent"
             android:layout_height="70dp"
+            android:layout_marginBottom="6dp"
             android:hint="Nome (Obrigatório)"
             app:helperTextTextColor="@color/design_default_color_error">
 
@@ -51,8 +53,10 @@
 
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/lSobrenome"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
             android:layout_width="match_parent"
             android:layout_height="70dp"
+            android:layout_marginBottom="6dp"
             android:hint="Sobrenome">
 
             <EditText
@@ -66,8 +70,10 @@
 
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/lCelular"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
             android:layout_width="match_parent"
             android:layout_height="70dp"
+            android:layout_marginBottom="6dp"
             android:hint="Celular (Obrigatório)"
             app:helperTextTextColor="@color/design_default_color_error">
 
@@ -82,8 +88,10 @@
 
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/lTelefone"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
             android:layout_width="match_parent"
             android:layout_height="70dp"
+            android:layout_marginBottom="6dp"
             android:hint="Telefone">
 
             <EditText
@@ -97,6 +105,7 @@
 
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/lEmail"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
             android:layout_width="match_parent"
             android:layout_height="70dp"
             android:hint="E-mail">
