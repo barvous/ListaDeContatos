@@ -39,9 +39,9 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
+            android:hint="Nome"
             android:inputType="textPersonName"
-            android:minHeight="48dp"
-            android:text="Nome" />
+            android:minHeight="48dp" />
 
         <EditText
             android:id="@+id/edtSobrenomeContato"
@@ -49,9 +49,9 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
             android:ems="10"
+            android:hint="Sobrenome"
             android:inputType="textPersonName"
-            android:minHeight="48dp"
-            android:text="Sobrenome" />
+            android:minHeight="48dp" />
 
         <EditText
             android:id="@+id/edtEmailContato"
@@ -59,9 +59,9 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
             android:ems="10"
+            android:hint="Email"
             android:inputType="textWebEmailAddress"
-            android:minHeight="48dp"
-            android:text="Email" />
+            android:minHeight="48dp" />
 
         <EditText
             android:id="@+id/edtTelefoneContato"
@@ -69,9 +69,9 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
             android:ems="10"
+            android:hint="Telefone"
             android:inputType="number"
-            android:minHeight="48dp"
-            android:text="Telefone" />
+            android:minHeight="48dp" />
 
         <EditText
             android:id="@+id/edtCelularContato"
@@ -79,9 +79,9 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
             android:ems="10"
+            android:hint="Celular"
             android:inputType="number"
-            android:minHeight="48dp"
-            android:text="Celular" />
+            android:minHeight="48dp" />
     </LinearLayout>
 
     <androidx.constraintlayout.widget.ConstraintLayout
