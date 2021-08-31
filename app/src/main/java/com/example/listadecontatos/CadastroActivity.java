@@ -11,10 +11,13 @@ import android.widget.Toast;
 import android.widget.Toolbar;
 
 import com.example.listadecontatos.modelo.Contato;
+import com.example.listadecontatos.modelo.ValidadorUtil;
 import com.fasterxml.jackson.databind.ser.Serializers;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 import com.example.listadecontatos.persistencia.BaseDados;
+
+import org.dizitart.no2.exceptions.UniqueConstraintException;
 
 public class CadastroActivity extends AppCompatActivity {
         EditText edtNome,edtSobrenome,edtEmail,edtTelefone,edtCelular;
@@ -58,14 +61,21 @@ public class CadastroActivity extends AppCompatActivity {
         contato.setTelefone(telefone);
         contato.setCelular(celular);
 
-                try {
+        try {
+            if (new ValidadorUtil().contatoValido(contato)) {
+                BaseDados.rContato.insert(contato);
+                finish();
+            }
+            else {
+                Toast.makeText(getApplicationContext(), "Preencha os campos obrigatórios", Toast.LENGTH_LONG)
+                        .show();
+            }
 
-                    BaseDados.rContato.insert(contato);
-
-                }catch (Exception e){
-                    Toast.makeText(getApplicationContext(), e.toString(),Toast.LENGTH_LONG).show();
-                }
-
-        finish();
+        }catch (UniqueConstraintException e){
+            Toast.makeText(getApplicationContext(), "Este número já existe", Toast.LENGTH_LONG)
+                    .show();
+        }
     }
+
+
 }

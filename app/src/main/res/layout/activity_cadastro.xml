@@ -10,7 +10,7 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="100dp"
-        android:gravity="center_vertical"
+        android:gravity="center|center_vertical"
         android:orientation="horizontal">
 
         <TextView
@@ -38,7 +38,8 @@
             android:layout_height="wrap_content"
             android:ems="10"
             android:hint="Nome"
-            android:inputType="textPersonName" />
+            android:inputType="textPersonName"
+            android:minHeight="48dp" />
 
         <EditText
             android:id="@+id/edtSobrenome"
@@ -47,7 +48,8 @@
             android:layout_marginTop="10dp"
             android:ems="10"
             android:hint="Sobrenome"
-            android:inputType="textPersonName" />
+            android:inputType="textPersonName"
+            android:minHeight="48dp" />
 
         <EditText
             android:id="@+id/edtEmail"
@@ -56,7 +58,8 @@
             android:layout_marginTop="10dp"
             android:ems="10"
             android:hint="E-mail"
-            android:inputType="textWebEmailAddress|textPersonName" />
+            android:inputType="textWebEmailAddress|textPersonName"
+            android:minHeight="48dp" />
 
         <EditText
             android:id="@+id/edtTelefone"
@@ -65,7 +68,8 @@
             android:layout_marginTop="10dp"
             android:ems="10"
             android:hint="Telefone"
-            android:inputType="number" />
+            android:inputType="number"
+            android:minHeight="48dp" />
 
         <EditText
             android:id="@+id/edtCelular"
@@ -74,7 +78,8 @@
             android:layout_marginTop="10dp"
             android:ems="10"
             android:hint="Celular"
-            android:inputType="number" />
+            android:inputType="number"
+            android:minHeight="48dp" />
     </LinearLayout>
 
     <androidx.constraintlayout.widget.ConstraintLayout

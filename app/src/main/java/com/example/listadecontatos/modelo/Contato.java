@@ -11,9 +11,8 @@ import java.util.Objects;
 
 @Indices(value = {
         //impede que sejam criadas duas montadoras com o mesmo nome
-        @Index(value = "nome", type = IndexType.Unique)
+        @Index(value = "celular", type = IndexType.Unique)
 })
-
 public class Contato implements Serializable {
     @Id
     public NitriteId id;

@@ -13,23 +13,10 @@
         android:layout_margin="10dp"
         android:orientation="horizontal">
 
-        <com.google.android.material.floatingactionbutton.FloatingActionButton
-            android:id="@+id/fabVoltar"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center_vertical"
-            android:layout_marginStart="5dp"
-            android:layout_marginLeft="5dp"
-            android:clickable="true"
-            android:src="@android:drawable/ic_menu_revert"
-            app:backgroundTint="@color/purple_500" />
-
         <TextView
             android:id="@+id/tvNomeContato"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:layout_marginStart="40dp"
-            android:layout_marginLeft="40dp"
             android:layout_weight="1"
             android:gravity="center_vertical"
             android:text="@string/nome_do_contato"
@@ -53,6 +40,7 @@
             android:layout_height="wrap_content"
             android:ems="10"
             android:inputType="textPersonName"
+            android:minHeight="48dp"
             android:text="Nome" />
 
         <EditText
@@ -62,6 +50,7 @@
             android:layout_marginTop="10dp"
             android:ems="10"
             android:inputType="textPersonName"
+            android:minHeight="48dp"
             android:text="Sobrenome" />
 
         <EditText
@@ -71,6 +60,7 @@
             android:layout_marginTop="10dp"
             android:ems="10"
             android:inputType="textWebEmailAddress"
+            android:minHeight="48dp"
             android:text="Email" />
 
         <EditText
@@ -80,6 +70,7 @@
             android:layout_marginTop="10dp"
             android:ems="10"
             android:inputType="number"
+            android:minHeight="48dp"
             android:text="Telefone" />
 
         <EditText
@@ -89,6 +80,7 @@
             android:layout_marginTop="10dp"
             android:ems="10"
             android:inputType="number"
+            android:minHeight="48dp"
             android:text="Celular" />
     </LinearLayout>
 
@@ -104,11 +96,9 @@
             android:layout_marginLeft="20dp"
             android:layout_marginTop="50dp"
             android:text="Salvar"
-            android:onClick="salvarEdicao"
             app:backgroundTint="@android:color/holo_green_dark"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            />
+            app:layout_constraintTop_toTopOf="parent" />
 
         <Button
             android:id="@+id/btnExcluir"
@@ -118,7 +108,6 @@
             android:layout_marginEnd="20dp"
             android:layout_marginRight="20dp"
             android:text="Excluir"
-            android:onClick="deletarContato"
             app:backgroundTint="@android:color/holo_red_light"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent" />

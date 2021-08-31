@@ -19,8 +19,10 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".ContatoActivity"/>
-        <activity android:name=".CadastroActivity"/>
+        <activity android:name=".ContatoActivity"
+            android:parentActivityName=".ListaActivity"/>
+        <activity android:name=".CadastroActivity"
+            android:parentActivityName=".ListaActivity"/>
     </application>
 
 </manifest>
