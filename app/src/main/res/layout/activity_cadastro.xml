@@ -2,6 +2,7 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/ipSobrenome"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
@@ -32,54 +33,83 @@
         android:layout_marginRight="10dp"
         android:orientation="vertical">
 
-        <EditText
-            android:id="@+id/edtNome"
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/lNome"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:ems="10"
-            android:hint="Nome"
-            android:inputType="textPersonName"
-            android:minHeight="48dp" />
+            android:layout_height="70dp"
+            android:hint="Nome (Obrigatório)"
+            app:helperTextTextColor="@color/design_default_color_error">
 
-        <EditText
-            android:id="@+id/edtSobrenome"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
-            android:ems="10"
-            android:hint="Sobrenome"
-            android:inputType="textPersonName"
-            android:minHeight="48dp" />
+            <EditText
+                android:id="@+id/edtNome"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:ems="10"
+                android:inputType="textPersonName" />
+        </com.google.android.material.textfield.TextInputLayout>
 
-        <EditText
-            android:id="@+id/edtEmail"
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/lSobrenome"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
-            android:ems="10"
-            android:hint="E-mail"
-            android:inputType="textWebEmailAddress|textPersonName"
-            android:minHeight="48dp" />
+            android:layout_height="70dp"
+            android:hint="Sobrenome">
 
-        <EditText
-            android:id="@+id/edtTelefone"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
-            android:ems="10"
-            android:hint="Telefone"
-            android:inputType="number"
-            android:minHeight="48dp" />
+            <EditText
+                android:id="@+id/edtSobrenome"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:ems="10"
+                android:inputType="textPersonName" />
+        </com.google.android.material.textfield.TextInputLayout>
 
-        <EditText
-            android:id="@+id/edtCelular"
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/lCelular"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
-            android:ems="10"
-            android:hint="Celular"
-            android:inputType="number"
-            android:minHeight="48dp" />
+            android:layout_height="70dp"
+            android:hint="Celular (Obrigatório)"
+            app:helperTextTextColor="@color/design_default_color_error">
+
+            <EditText
+                android:id="@+id/edtCelular"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:ems="10"
+                android:inputType="number" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/lTelefone"
+            android:layout_width="match_parent"
+            android:layout_height="70dp"
+            android:hint="Telefone">
+
+            <EditText
+                android:id="@+id/edtTelefone"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:ems="10"
+                android:inputType="number" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/lEmail"
+            android:layout_width="match_parent"
+            android:layout_height="70dp"
+            android:hint="E-mail">
+
+            <EditText
+                android:id="@+id/edtEmail"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:ems="10"
+                android:inputType="textWebEmailAddress" />
+        </com.google.android.material.textfield.TextInputLayout>
+
     </LinearLayout>
 
     <androidx.constraintlayout.widget.ConstraintLayout

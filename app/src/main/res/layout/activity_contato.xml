@@ -17,8 +17,9 @@
             android:id="@+id/tvNomeContato"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
+            android:layout_marginTop="30dp"
             android:layout_weight="1"
-            android:gravity="center_vertical"
+            android:gravity="center"
             android:text="@string/nome_do_contato"
             android:textSize="24sp" />
 

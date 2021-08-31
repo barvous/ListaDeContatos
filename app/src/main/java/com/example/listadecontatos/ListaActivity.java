@@ -1,5 +1,6 @@
 package com.example.listadecontatos;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.Editable;
@@ -81,7 +82,11 @@ public class ListaActivity extends AppCompatActivity {
         try {
             listContato = BaseDados.rContato.find().toList();
 
-            Collections.sort(listContato, (v1, v2) -> v1.getNome().compareToIgnoreCase(v2.getNome()));
+            Collections.sort(listContato, (v1, v2) -> {
+
+                return v1.getNome().compareToIgnoreCase(v2.getNome());
+
+            });
 
             lv.setAdapter(new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, listContato));
 
