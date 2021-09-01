@@ -7,7 +7,6 @@ import org.dizitart.no2.objects.Index;
 import org.dizitart.no2.objects.Indices;
 
 import java.io.Serializable;
-import java.util.Objects;
 
 @Indices(value = {
         //impede que sejam criadas duas montadoras com o mesmo nome
@@ -19,14 +18,14 @@ public class Contato implements Serializable {
     private String nome;
     private String sobrenome;
     private String email;
-    private String telefone;
-    private String celular;
+    private Integer telefone;
+    private Integer celular;
 
 
     public Contato() {
     }
 
-    public Contato(String nome, String sobrenome, String email, String telefone, String celular) {
+    public Contato(String nome, String sobrenome, String email, Integer telefone, Integer celular) {
         this.nome = nome;
         this.sobrenome = sobrenome;
         this.email = email;
@@ -34,7 +33,7 @@ public class Contato implements Serializable {
         this.celular = celular;
     }
 
-    public Contato(String nome, String celular) {
+    public Contato(String nome, Integer celular) {
         this.nome = nome;
         this.celular = celular;
     }
@@ -71,19 +70,19 @@ public class Contato implements Serializable {
         this.email = email;
     }
 
-    public String getTelefone() {
+    public Integer getTelefone() {
         return telefone;
     }
 
-    public void setTelefone(String telefone) {
+    public void setTelefone(Integer telefone) {
         this.telefone = telefone;
     }
 
-    public String getCelular() {
+    public Integer getCelular() {
         return celular;
     }
 
-    public void setCelular(String celular) {
+    public void setCelular(Integer celular) {
         this.celular = celular;
     }
 

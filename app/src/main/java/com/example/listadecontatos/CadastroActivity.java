@@ -2,18 +2,14 @@ package com.example.listadecontatos;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
-import android.widget.Toolbar;
 
 import com.example.listadecontatos.modelo.Contato;
 import com.example.listadecontatos.modelo.ValidadorUtil;
-import com.fasterxml.jackson.databind.ser.Serializers;
-import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 import com.example.listadecontatos.persistencia.BaseDados;
 
@@ -51,8 +47,11 @@ public class CadastroActivity extends AppCompatActivity {
         String nome = edtNome.getText().toString();
         String sobrenome = edtSobrenome.getText().toString();
         String email = edtEmail.getText().toString();
-        String telefone = edtTelefone.getText().toString();
-        String celular = edtCelular.getText().toString();
+
+        String telefoneStr = edtTelefone.getText().toString();
+        String celularStr = edtCelular.getText().toString();
+        Integer telefone = (telefoneStr.equals("")) ? null : Integer.parseInt(telefoneStr);
+        Integer celular = (celularStr.equals("")) ? null :  Integer.parseInt(celularStr);
 
         Contato contato = new Contato();
         contato.setNome(nome);

@@ -3,9 +3,7 @@ package com.example.listadecontatos;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.AlertDialog;
-import android.content.DialogInterface;
 import android.os.Bundle;
-import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
@@ -14,9 +12,6 @@ import android.widget.Toast;
 import com.example.listadecontatos.modelo.Contato;
 import com.example.listadecontatos.modelo.ValidadorUtil;
 import com.example.listadecontatos.persistencia.BaseDados;
-
-import org.dizitart.no2.exceptions.UniqueConstraintException;
-import org.dizitart.no2.objects.filters.ObjectFilters;
 
 
 public class ContatoActivity extends AppCompatActivity {
@@ -82,8 +77,11 @@ public class ContatoActivity extends AppCompatActivity {
         String nomeNovo = edtNome.getText().toString();
         String sobrenomeNovo = edtSobrenome.getText().toString();
         String emailNovo = edtEmail.getText().toString();
-        String telefoneNovo = edtTelefone.getText().toString();
-        String celularNovo = edtCelular.getText().toString();
+
+        String telefoneStr = edtTelefone.getText().toString();
+        String celularStr = edtCelular.getText().toString();
+        Integer telefoneNovo = (telefoneStr.equals("")) ? null : Integer.parseInt(telefoneStr);
+        Integer celularNovo = (celularStr.equals("")) ? null : Integer.parseInt(celularStr);
 
         //criando e preenchendo um novo objeto com os novos valores
         contato.setNome(nomeNovo);
@@ -122,7 +120,7 @@ public class ContatoActivity extends AppCompatActivity {
         edtNome.setText(contato.getNome());
         edtSobrenome.setText(contato.getSobrenome());
         edtEmail.setText(contato.getEmail());
-        edtTelefone.setText(contato.getTelefone());
-        edtCelular.setText(contato.getCelular());
+        edtTelefone.setText(contato.getTelefone().toString());
+        edtCelular.setText(contato.getCelular().toString());
     }
 }
